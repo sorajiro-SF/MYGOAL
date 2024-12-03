@@ -13,7 +13,7 @@
             @foreach ($rels as $rel)
                 <div class='relation'>
                     <h2 class='name'>
-                        <a href="/relation/{{ $rel->id }}">{{ $rel->relation }}</a>
+                        {{ $rel->relation }}
                     </h2>
                 </div>
                 <div class="edit"><a href="/relation/{{ $rel->id }}/edit">編集する</a></div>
