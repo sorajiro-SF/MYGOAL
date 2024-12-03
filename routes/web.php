@@ -17,7 +17,7 @@ use App\Models\Relation;
 
 Route::get('/', [RelationController::class, 'index']);
 Route::get('/relation/create', [RelationController::class, 'create']);
-Route::get('relation/{relation}', [RelationController::class ,'show']);
+//Route::get('relation/{relation}', [RelationController::class ,'show']);//
 Route::post('/relation',[RelationController::class,"store"]);
 Route::get('/relation/{relation}/edit', [RelationController::class, 'edit']);
 Route::post('/relation/{relation}', [RelationController::class, 'update']);
