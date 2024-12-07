@@ -6,7 +6,7 @@ use App\Models\Relation;
 
 class RelationController extends Controller
 {
-    public function index(Relation $rel)
+    public function relations (Relation $rel)
     {
         return view('rel.relation')->with(['rels' => $rel->getPaginateByLimit()]); 
     }
