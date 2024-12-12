@@ -4,11 +4,13 @@
     <x-slot name="header">
     <head>
         <meta charset="utf-8">
-        <title>作成場面</title>
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ ('relation作成') }}
+        </h2>
+
     </head>
     </x-slot>
     <body>
-        <h1>relation作成</h1>
         <form action="/relation" method="POST">
             @csrf
             <div class="title">
@@ -19,7 +21,7 @@
             </div>
 
             <input type="submit" value="保存する"/>
-
+            <p></p>
             <div class="footer">
             <a href="/">戻る</a>
         </div>
