@@ -21,6 +21,9 @@
                     <x-nav-link :href="route('Mprofile.index')" :active="request()->routeIs('Mprofile.index')">
                         {{ __('プロフィール') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('froms')" :active="request()->routeIs('froms')">
+                        {{ __('出身地') }}
+                    </x-nav-link>
                 </div>
             </div>
 
