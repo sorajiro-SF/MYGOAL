@@ -21,7 +21,7 @@ class RelationController extends Controller
     $input = $request['relation'];
     $rel->relation = $input["name"];
     $rel->save();
-    return redirect('/');
+    return redirect('/relation');
 }
 
 public function show(Relation $relation)
@@ -40,13 +40,13 @@ public function update(RelationRequest $request, Relation $relation)
     $input_rel = $request['relation'];
     $relation->relation = $input_rel["name"];
     $relation->save();
-    return redirect('/');
+    return redirect('/relation');
 }
 
 public function delete(Relation $relation)
 {
     $relation->delete();
-    return redirect('/');
+    return redirect('/relation');
 }
 
 }

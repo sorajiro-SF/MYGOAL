@@ -8,32 +8,76 @@ use App\Http\Requests\MprofileRequest;
 
 
 
+
 class MprofileController extends Controller
 {
-    public function index() 
+    public function index(Mprofile $pro) 
     {
-        return view('Mprofile.index');
+        return view('Mprofile.index')->with(['profile' => $pro->getPaginateByLimit()] );
     }
     public function create(Relation $relation, From $from)
     {
         return view('Mprofile.create')->with(['relation' => $relation->get(), 'from'=> $from->get()]);
     }
 
-    public function store(MprofileRequest $request,Mprofile $pro)
+    public function store(MprofileRequest $request, Mprofile $pro)
     {
-        $input = $request['Mprofile'];
-        $pro->name = $input["name"];
-        $pro->kana = $input["name_kana"];
-        $pro->relation_id = $input["relation_id"];
-        $pro->date = $input["birth"];
-        $pro->from_id = $input["from_id"];
 
-        $path = $request->file('image')->store('public/image');
-        $image_path = basename($path);
-        $pro->image_path = $image_path;
+        $pro->name = $request->name;
+        $pro->name_kana = $request->kana;
+        $pro->relation_id = $request->relation_id;
+        $pro->hobby = $request->hobby;
+        $pro->birth = $request->date;
+        $pro->food = $request->food;
+        $pro->work = $request->work;
+        $pro->word = $request->word;
+        $pro->from_id = $request->from_id;
+
+        $file_name = $request->file('img')->getClientOriginalName();
+        $request->file('img')->storeAs('image' ,$file_name);
+        $pro->image_path = $file_name;
+        
         $pro->save();
-
-        return redirect("/Mprofile");
+        return redirect('/Mprofile');
     }
+
+    public function edit(Mprofile $pro, Relation $relation, From $from)
+    {
+        return view('Mprofile.edit')->with(['pro' => $pro ,'relation' => $relation->get(), 'from'=> $from->get()]);
+    }
+
+    public function update(MprofileRequest $request, Mprofile $pro)
+{
+    $pro->name = $request->name;
+    $pro->name_kana = $request->kana;
+    $pro->relation_id = $request->relation_id;
+    $pro->hobby = $request->hobby;
+    $pro->birth = $request->date;
+    $pro->food = $request->food;
+    $pro->work = $request->work;
+    $pro->word = $request->word;
+    $pro->from_id = $request->from_id;
+
+    $file_name = $request->file('img')->getClientOriginalName();
+    if ($pro->image_path == $file_name)
+    {
+        //
+    }else{
+        $file_name = $request->file('img')->getClientOriginalName();
+        $request->file('img')->storeAs('image' ,$file_name);
+        $pro->image_path = $file_name;
+    }
+    $pro->save();
+    return redirect('/Mprofile');
+}
+
+
+    public function delete(Mprofile $pro)
+    {
+        
+        $pro->delete(); 
+        return redirect('/Mprofile');
+    }
+
 
 }

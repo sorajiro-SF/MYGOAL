@@ -30,7 +30,7 @@
                 </form>
             @endforeach
         </div>
-        <a href='/relation/create'>作成</a>
+        <a id="create" href='/relation/create'>作成</a>
         <div class='paginate'>
             {{ $rels->links() }}
         </div>

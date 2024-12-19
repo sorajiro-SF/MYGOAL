@@ -8,3 +8,11 @@ p   {
     font-size:1.6rem;
     color: #2196F3;
 } 
+.relations h1{
+    font-size:1.5rem;
+    color:red
+}
+
+#create a{
+    font-size:1.2rem;
+}
