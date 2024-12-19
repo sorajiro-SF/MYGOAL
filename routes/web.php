@@ -35,11 +35,11 @@ Route::middleware('auth')->group(function () {
 
 Route::middleware('auth')->group(function () {
     Route::get('/Mprofile', [MprofileController::class, 'index'])->name('Mprofile.index');
-    Route::post('/Mprofile', [MprofileController::class, 'store'])->name('Mprofile.store');
     Route::get('/Mprofile/create', [MprofileController::class, 'create'])->name('Mprofile.create');
-    Route::post('/Mprofile/{Mprofile}', [MprofileController::class, 'update'])->name('update');
-    Route::get('/Mprofile/{Mprofile}/edit', [MprofileController::class, 'edit'])->name('edit');
-    Route::post('/Mprofile', [MprofileController::class, 'delete'])->name('Mprofile.delete');
+    Route::post('/Mprofile', [MprofileController::class, 'store'])->name('Mprofile.store');
+    Route::post('/Mprofile/{pro}', [MprofileController::class, 'update'])->name('Mprofile.update');
+    Route::get('/Mprofile/{pro}/edit', [MprofileController::class, 'edit'])->name('Mprofile.edit');
+    Route::post('/Mprofile/{pro}/delete', [MprofileController::class, 'delete'])->name('Mprofile.delete');
 });
 
 
@@ -65,3 +65,4 @@ Route::group(['middleware' => ['auth']], function(){
     Route::post('/from/{from}/delete', [FromController::class,'delete'])->name('delete');
 
 });
+

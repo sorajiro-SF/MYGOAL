@@ -24,6 +24,7 @@
                     <x-nav-link :href="route('froms')" :active="request()->routeIs('froms')">
                         {{ __('出身地') }}
                     </x-nav-link>
+            
                 </div>
             </div>
 
