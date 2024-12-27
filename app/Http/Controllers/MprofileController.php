@@ -5,6 +5,7 @@ use App\Models\Relation;
 use App\Models\From;
 use App\Models\Mprofile;
 use App\Http\Requests\MprofileRequest;
+use Illuminate\Support\Facades\DB;
 
 
 
@@ -19,26 +20,50 @@ class MprofileController extends Controller
     {
         return view('Mprofile.create')->with(['relation' => $relation->get(), 'from'=> $from->get()]);
     }
+    public function show(Mprofile $pro)
+{
+    return view('Mprofile.show')->with(['pro' => $pro]);
+ //'post'はbladeファイルで使う変数。中身は$postはid=1のPostインスタンス。
+}
 
     public function store(MprofileRequest $request, Mprofile $pro)
     {
-
-        $pro->name = $request->name;
-        $pro->name_kana = $request->kana;
-        $pro->relation_id = $request->relation_id;
-        $pro->hobby = $request->hobby;
-        $pro->birth = $request->date;
-        $pro->food = $request->food;
-        $pro->work = $request->work;
-        $pro->word = $request->word;
-        $pro->from_id = $request->from_id;
-
-        $file_name = $request->file('img')->getClientOriginalName();
-        $request->file('img')->storeAs('image' ,$file_name);
-        $pro->image_path = $file_name;
-        
-        $pro->save();
+        DB::beginTransaction();
+        try{
+            $pro->name = $request->name;
+            $pro->name_kana = $request->kana;
+            $pro->relation_id = $request->relation_id;
+            $pro->hobby = $request->hobby;
+            $pro->birth = $request->date;
+            $pro->food = $request->food;
+            $pro->work = $request->work;
+            $pro->word = $request->word;
+            $pro->from_id = $request->from_id;
+            $pro->image_path=$request->from_id;
+            $pro->save();
+            $file = $request->file('img');
+            if (empty($file)) {
+                return redirect('/Mprofile/create')->withInput();
+                }else {
+                $file_name = 'profile'.$pro->id;
+                $pro->image_path == $file_name;
+                $request->file('img')->storeAs('public/image' ,$file_name);
+                $pro->image_path = $file_name;
+            }
+            $pro->image_path = 'profile'.$pro->id;
+            $file_name = $pro->image_path;
+            $request->file('img')->storeAs('public/image' ,$file_name);
+            $pro->save();
+            DB::commit();
+        }catch (\Exception $e) {
+            report($e);
+            DB::rollback();
+            return redirect('/Mprofile/create')->withInput();
+        }
         return redirect('/Mprofile');
+            //リダイレクトでOLD保持◯
+            //ゴールを見据えたコーディングを
+            //画像がnull値でもおけーにする->Nullの時storeAsメソッドが作動しないようにする◯
     }
 
     public function edit(Mprofile $pro, Relation $relation, From $from)
@@ -48,6 +73,8 @@ class MprofileController extends Controller
 
     public function update(MprofileRequest $request, Mprofile $pro)
 {
+    DB::beginTransaction();
+    try{
     $pro->name = $request->name;
     $pro->name_kana = $request->kana;
     $pro->relation_id = $request->relation_id;
@@ -58,19 +85,23 @@ class MprofileController extends Controller
     $pro->word = $request->word;
     $pro->from_id = $request->from_id;
 
-    $file_name = $request->file('img')->getClientOriginalName();
-    if ($pro->image_path == $file_name)
-    {
-        //
-    }else{
-        $file_name = $request->file('img')->getClientOriginalName();
-        $request->file('img')->storeAs('image' ,$file_name);
-        $pro->image_path = $file_name;
+    $file = $request->file('img');
+        if (empty($file)) {
+            }else {
+                $file_name = 'profile'.$pro->id;
+                $pro->image_path == $file_name;
+                $request->file('img')->storeAs('public/image' ,$file_name);
+                $pro->image_path = $file_name;
+            }
+        $pro->save();
+        DB::commit();
+    }catch (\Exception $e) {
+        report($e);
+        DB::rollback();
+        return redirect('/Mprofile/edit')->withInput();
     }
-    $pro->save();
     return redirect('/Mprofile');
 }
-
 
     public function delete(Mprofile $pro)
     {

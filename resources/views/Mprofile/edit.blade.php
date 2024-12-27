@@ -85,7 +85,8 @@
                <h2>最高の写真</h2>
            </div>
            <div>
-           <input type='file' name='img' id="filecheck"/>
+           <input type='file' name='img' />
+           <p class="img__error" style="color:red">{{ $errors->first('img') }}</p>
            </div>
            
            <p></p>
