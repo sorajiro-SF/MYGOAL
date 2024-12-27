@@ -37,6 +37,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/Mprofile', [MprofileController::class, 'index'])->name('Mprofile.index');
     Route::get('/Mprofile/create', [MprofileController::class, 'create'])->name('Mprofile.create');
     Route::post('/Mprofile', [MprofileController::class, 'store'])->name('Mprofile.store');
+    Route::get('/Mprofile/{pro}', [MprofileController::class ,'show'])->name('Mprofile.show');
     Route::post('/Mprofile/{pro}', [MprofileController::class, 'update'])->name('Mprofile.update');
     Route::get('/Mprofile/{pro}/edit', [MprofileController::class, 'edit'])->name('Mprofile.edit');
     Route::post('/Mprofile/{pro}/delete', [MprofileController::class, 'delete'])->name('Mprofile.delete');

@@ -15,14 +15,8 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('ダッシュボード') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('relations')" :active="request()->routeIs('relation')">
-                        {{ __('関係性') }}
-                    </x-nav-link>
                     <x-nav-link :href="route('Mprofile.index')" :active="request()->routeIs('Mprofile.index')">
                         {{ __('プロフィール') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('froms')" :active="request()->routeIs('froms')">
-                        {{ __('出身地') }}
                     </x-nav-link>
             
                 </div>

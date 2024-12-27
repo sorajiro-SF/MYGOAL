@@ -12,10 +12,10 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
-                    <p class="name">{{$pro->name}}</p>
+                    <a class="name"  href="/Mprofile/{{$pro->id}}">{{$pro->name}}</a>
                     <p class='kana'>{{$pro->name_kana}}</p>
-                    <img src="asset('app/image/{{ $pro->image_path }}')"  alt="">
-
+                    <img class='p_img' src="{{asset('storage/image/'. $pro->image_path)}}"  alt="">
+                    <!--画像の大きさを一定にしたいですね-->
                     <div class="edit"><a href="/Mprofile/{{ $pro->id }}/edit">編集する</a></div>
 
                     <form action="/Mprofile/{{ $pro->id }}/delete" id="form_{{ $pro->id }}" method="post">
@@ -39,7 +39,7 @@
         </div>
     </div>
     </div>
-    
+<!--ここにページネイトつけたいなあ-->
     <script>
         function deletepro(id) {
         'use strict'
