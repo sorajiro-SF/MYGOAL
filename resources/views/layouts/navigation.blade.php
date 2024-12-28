@@ -18,6 +18,12 @@
                     <x-nav-link :href="route('Mprofile.index')" :active="request()->routeIs('Mprofile.index')">
                         {{ __('プロフィール') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('Quiz.select')" :active="request()->routeIs('Quiz.select')">
+                        {{ __('クイズ') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('NewQuiz.select')" :active="request()->routeIs('NewQuiz.select')">
+                        {{ __('4択クイズ') }}
+                    </x-nav-link>
             
                 </div>
             </div>

@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('プロフィール詳細') }}
+            {{ __('結果発表！') }}
         </h2>
         <style>
     </style>
@@ -12,7 +12,9 @@
                 <img class="profile_show_img" src="{{asset('storage/image/'. $pro->image_path)}}" alt="">
             </figure>
             <div class="right">
+                <p class="answer">正解発表！</p>
             <p class="name">名前：{{$pro->name}}（{{$pro->name_kana}}）</p>
+            <p class="ans_name">あなたの答え：
             <p class="relation">関係性：{{$pro->relation->relation}}</p>
             <p class="birth">誕生日：{{ $pro->birth }}</p>
             <p class="from">出身地：{{$pro->from->from}}</p>

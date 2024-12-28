@@ -2,10 +2,9 @@
 
 namespace App\Http\Requests;
 
-use App\Models\Mprofile;
 use Illuminate\Foundation\Http\FormRequest;
 
-class MprofileRequest extends FormRequest
+class QuizRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.

@@ -1,8 +1,15 @@
+.paginate {
+    background: white;
+    font-size:1.2rem;
+    font-weight: bold;
+    padding-left: 40px;
+    
+}
 .profile h2{
     font-size:1.5rem;
 }
 p   {
-    margin:15px;
+    margin:10px;
 }
 .froms h1{
     font-size:1.6rem;
@@ -36,20 +43,20 @@ p   {
 .show .profile_show_img{
     object-fit: cover;
   }
-  .show .name {
+.show .name {
     margin: 0;
     padding: 0;
     font-weight: bold;
     font-size: 18px;
   }
-  .show .text {
+.show .text {
     margin: 10px 0 0;
     padding: 0;
   }
   
   /* 画像を天地中央表示 */
   
-  .show .image img {
+.show .image img {
     height: 100%;
     position: absolute;
     top: 0;
@@ -59,4 +66,73 @@ p   {
     margin: auto;
   }
   
+/*こっから先はクイズ*/
+.quizselect{
+    display: flex;
+}
+
+.quizselect img{
+width: 150px;
+height: 200px;
+object-fit: cover;
+}
+
+.quizquestion {
+    display: flex;
+    background: white;
+}
+
+.quizquestion .right {
+    margin: 0 0 0 20px;
+    padding: 0;
+  }
+
+.quizquestion .image{
+    width: 450px;
+    height: 600px;
+    position: relative;
+}
+
+.quizquestion .profile_show_img{
+    object-fit: cover;
+  }
+
+.quizquestion .text {
+    margin: 10px 0 0;
+    padding: 0;
+  }
   
+  
+.quizquestion .image img {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+#answerbutton{
+    background-color: #4CAF50;
+    border: #000000;
+    color: rgb(255, 255, 255);
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 30px;
+    margin: 10px 10px;
+    cursor: pointer;
+}
+
+.quizquestion .footer {
+    background-color: rgb(255, 255, 255);
+    border: #000000 solid 1px;;
+    color: #000000;
+    padding: 10px 20px;
+    text-align: center;
+    display: inline-block;
+    font-size: 20px;
+    margin: 10px 10px;
+    cursor: pointer;
+}

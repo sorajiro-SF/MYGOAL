@@ -5,7 +5,7 @@ use App\Http\Controllers\MprofileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RelationController;
 use App\Http\Controllers\FromController;
-use App\Models\Relation;
+use App\Http\Controllers\QuizController;
 
 
 /*
@@ -67,3 +67,15 @@ Route::group(['middleware' => ['auth']], function(){
 
 });
 
+
+Route::middleware('auth')->group(function () {
+    Route::get('/Quiz', [QuizController::class, 'QuizSelect'])->name('Quiz.select');
+    Route::post('/Quiz/{pro}', [QuizController::class, 'QuiCheck'])->name('Quiz.check');
+    Route::get('/Quiz/{pro}', [QuizController::class, 'QuizQuestion'])->name('Quiz.question');
+});
+
+Route::middleware('auth')->group(function () {
+    Route::get('/NewQuiz', [QuizController::class, 'NewQuizSelect'])->name('NewQuiz.select');
+    Route::post('/NewQuiz/{pro}', [QuizController::class, 'NewQuiCheck'])->name('NewQuiz.check');
+    Route::get('/NewQuiz/{pro}', [QuizController::class, 'NewQuizQuestion'])->name('NewQuiz.question');
+});
