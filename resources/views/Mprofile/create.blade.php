@@ -23,8 +23,9 @@
                 <p class="title__error" style="color:red">{{ $errors->first('kana') }}</p>
                 </div>
 
-            <div class="relation">
+            
             <h2>関係性</h2>
+            <div class="relation">
             <select name="relation_id" value="{{ old('relation_id') }}">
                 @foreach($relation as $relation)
                     <option value="{{ $relation->id }}">{{ $relation->relation }}</option>
@@ -36,8 +37,7 @@
 
             <div class="birth">
             <h2>誕生日</h2>
-                <input type="date" name="date" 
-                value="{{ old('date') }}"/>
+                <input type="date" name="date" value="{{ old('date') }}"/>
             <p></p>
 
             <div class="from">
@@ -51,7 +51,7 @@
             <p></p>
 
 
-            <div class="name">
+            <div class="hobby">
                 <h2>趣味</h2>
                 <input type="text" name="hobby" placeholder="自分の趣味"
                 value="{{ old('hobby') }}"/>
@@ -59,20 +59,17 @@
             <p></p>
 
             <h2>好きな食べ物</h2>
-                <input type="text" name="food" placeholder="好きな食べ物"
-                value="{{ old('food') }}"/>
+                <input type="text" name="food" placeholder="好きな食べ物" value="{{ old('food') }}"/>
                 <p class="title__error" style="color:red">{{ $errors->first('food') }}</p>
             <p></p>
 
             <h2>仕事</h2>
-                <input type="text" name="work" placeholder="仕事"
-                value="{{ old('work') }}"/>
+                <input type="text" name="work" placeholder="仕事" value="{{ old('work') }}"/>
                 <p class="title__error" style="color:red">{{ $errors->first('work') }}</p>
             <p></p>
 
             <h2>好きな言葉</h2>
-                <input type="text" name="word" placeholder="人生の言葉を入れてね"
-                value="{{ old('word') }}"/>
+                <input type="text" name="word" placeholder="人生の言葉を入れてね" value="{{ old('word') }}"/>
                 <p class="title__error" style="color:red">{{ $errors->first('word') }}</p>
             <p></p>
             <div class='image'>

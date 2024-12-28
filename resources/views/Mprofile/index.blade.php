@@ -36,6 +36,9 @@
                 </div>
             </div>
         </div>
+        <div class='paginate'>
+            <p>{{ $profile->links() }}</p>
+        </div>
         </div>
     </div>
     </div>
