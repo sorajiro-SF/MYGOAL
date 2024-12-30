@@ -5,6 +5,7 @@
         </h2>
         <style>    
     </style>
+
     </x-slot>
     <br></br>
     <div class="quizquestion">
@@ -73,6 +74,7 @@
                 <a href="/Quiz">戻る</a>
             </div>
         </div>
-            
+        <script src="{{ asset('/js/jquery-3.7.1.min.js') }}"></script>
+        <script src="{{ asset('/js/Quiz.js') }}"></script>
     </div>
     </x-app-layout>

@@ -125,8 +125,32 @@ object-fit: cover;
     cursor: pointer;
 }
 
+#answer_button{
+    background-color: #4CAF50;
+    border: #000000;
+    color: rgb(255, 255, 255);
+    padding: 10px 25px;
+    text-align: center;
+    display: inline-block;
+    font-size: 20px;
+    margin: 10px 10px;
+    cursor: pointer;
+}
+
 .quizquestion .footer {
     background-color: rgb(255, 255, 255);
+    border: #000000 solid 1px;;
+    color: #000000;
+    padding: 10px 20px;
+    text-align: center;
+    display: inline-block;
+    font-size: 20px;
+    margin: 10px 10px;
+    cursor: pointer;
+}
+
+.newquizselect button{
+    background-color: yellow;
     border: #000000 solid 1px;;
     color: #000000;
     padding: 10px 20px;

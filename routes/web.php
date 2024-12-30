@@ -70,12 +70,11 @@ Route::group(['middleware' => ['auth']], function(){
 
 Route::middleware('auth')->group(function () {
     Route::get('/Quiz', [QuizController::class, 'QuizSelect'])->name('Quiz.select');
-    Route::post('/Quiz/{pro}', [QuizController::class, 'QuiCheck'])->name('Quiz.check');
     Route::get('/Quiz/{pro}', [QuizController::class, 'QuizQuestion'])->name('Quiz.question');
 });
 
 Route::middleware('auth')->group(function () {
     Route::get('/NewQuiz', [QuizController::class, 'NewQuizSelect'])->name('NewQuiz.select');
-    Route::post('/NewQuiz/{pro}', [QuizController::class, 'NewQuiCheck'])->name('NewQuiz.check');
-    Route::get('/NewQuiz/{pro}', [QuizController::class, 'NewQuizQuestion'])->name('NewQuiz.question');
+    Route::get('/NewQuiz/ALL', [QuizController::class, 'NewQuizALL'])->name('NewQuiz.ALL');
+    Route::get('/NewQuiz/Food', [QuizController::class, 'NewQuizFood'])->name('NewQuiz.Food');
 });
