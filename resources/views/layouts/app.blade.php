@@ -14,8 +14,6 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         <link rel="stylesheet" href="{{ asset('/css/profile.css') }}" >
-        <script src="{{ asset('/js/jquery-3.7.1.min.js') }}"></script>
-        <script src="{{ asset('/js/Quiz.js') }}"></script>
 
     </head>
     <body class="font-sans antialiased">

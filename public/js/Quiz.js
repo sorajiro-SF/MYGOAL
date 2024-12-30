@@ -33,15 +33,4 @@ $(function (){
         
         
     });
-
-    /*$('#answer_check_text').on('click', function(){
-        $('.answer_text').show();
-        $('#answer_hide_text').show();
-        $('#answer_check_text').hide();
-    });
-    $('#answer_hide_text').on('click', function(){
-        $('.answer_text').hide();
-        $('#answer_check_text').show();
-        $('#answer_hide_text').hide();
-    });*/
 });

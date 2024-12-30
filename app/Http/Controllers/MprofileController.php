@@ -46,13 +46,9 @@ class MprofileController extends Controller
                 return redirect('/Mprofile/create')->withInput();
                 }else {
                 $file_name = 'profile'.$pro->id;
-                $pro->image_path == $file_name;
-                $request->file('img')->storeAs('public/image' ,$file_name);
                 $pro->image_path = $file_name;
+                $request->file('img')->storeAs('public/image' ,$file_name);
             }
-            $pro->image_path = 'profile'.$pro->id;
-            $file_name = $pro->image_path;
-            $request->file('img')->storeAs('public/image' ,$file_name);
             $pro->save();
             DB::commit();
         }catch (\Exception $e) {
@@ -61,9 +57,6 @@ class MprofileController extends Controller
             return redirect('/Mprofile/create')->withInput();
         }
         return redirect('/Mprofile');
-            //リダイレクトでOLD保持◯
-            //ゴールを見据えたコーディングを
-            //画像がnull値でもおけーにする->Nullの時storeAsメソッドが作動しないようにする◯
     }
 
     public function edit(Mprofile $pro, Relation $relation, From $from)
@@ -72,26 +65,25 @@ class MprofileController extends Controller
     }
 
     public function update(MprofileRequest $request, Mprofile $pro)
-{
-    DB::beginTransaction();
-    try{
-    $pro->name = $request->name;
-    $pro->name_kana = $request->kana;
-    $pro->relation_id = $request->relation_id;
-    $pro->hobby = $request->hobby;
-    $pro->birth = $request->date;
-    $pro->food = $request->food;
-    $pro->work = $request->work;
-    $pro->word = $request->word;
-    $pro->from_id = $request->from_id;
+    {
+        DB::beginTransaction();
+        try{
+        $pro->name = $request->name;
+        $pro->name_kana = $request->kana;
+        $pro->relation_id = $request->relation_id;
+        $pro->hobby = $request->hobby;
+        $pro->birth = $request->date;
+        $pro->food = $request->food;
+        $pro->work = $request->work;
+        $pro->word = $request->word;
+        $pro->from_id = $request->from_id;
 
-    $file = $request->file('img');
+        $file = $request->file('img');
         if (empty($file)) {
             }else {
-                $file_name = 'profile'.$pro->id;
-                $pro->image_path == $file_name;
+                $file_name = 'profile'.$pro->id;//ファイル名を変えるよ
+                $pro->image_path = $file_name;//データベースの画像パスを変えるよ
                 $request->file('img')->storeAs('public/image' ,$file_name);
-                $pro->image_path = $file_name;
             }
         $pro->save();
         DB::commit();

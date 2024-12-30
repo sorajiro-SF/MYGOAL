@@ -10,21 +10,19 @@ class Mprofile extends Model
 {
     use SoftDeletes;
     use HasFactory;
-    
+
     public function getPaginateByLimit(int $limit_count = 5)
     {
-    return $this->orderBy('updated_at', 'DESC')->paginate($limit_count);
-
+        return $this->orderBy('updated_at', 'DESC')->paginate($limit_count);
     }
 
-    public function Relation()   
-{
-    return $this->belongsTo(Relation::class);
-}
+    public function Relation()
+    {
+        return $this->belongsTo(Relation::class);
+    }
 
-public function From()   
-{
-    return $this->belongsTo(From::class);
-}
-
+    public function From()
+    {
+        return $this->belongsTo(From::class);
+    }
 }
