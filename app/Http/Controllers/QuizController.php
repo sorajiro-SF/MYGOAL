@@ -12,7 +12,7 @@ class QuizController extends Controller
 {
     public function QuizSelect(Mprofile $pro)
     {
-        return view('Quiz.select')->with(['profile' => $pro->getPaginateByLimit(4)]);
+        return view('Quiz.select')->with(['profile' => $pro->getPaginateByLimit(5)]);
     }
 
     public function QuizQuestion(Mprofile $pro, Relation $relation, From $from)
@@ -87,9 +87,9 @@ class QuizController extends Controller
                 $record3[$field],
                 $record4[$field],
             ];
-            shuffle($sentakushi);//選択肢というインスタンス名はそのままに、順番だけ変えちゃう
+            shuffle($sentakushi);//選択肢のインスタンス名はそのままに、順番だけ変えちゃう
 
-            // 取得したデータをもとに問題を作ります
+            // 取得したデータをもとに問題を作ります。なぜかここ消すとエラーに
             $question_key = [
                 "birth" => "生年月日",
                 "food" => "好きな食べ物",

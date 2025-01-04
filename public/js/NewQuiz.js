@@ -18,6 +18,7 @@ $(function (){
 
         let result = 0;
         form_name.forEach(function(item){
+			const input_chk=document.getElementById('check_'+item)
 			const radioButtons = document.getElementsByName(item);
         	let selectedValue = "";
             var input_ele = $('#'+item);
@@ -29,7 +30,9 @@ $(function (){
 			  }
             if( selectedValue == input_ele.attr('answer')){
                 result++;
+				input_chk.textContent="";
             }else {
+				input_chk.textContent="回答が違います！";
             }
         });
         if(result < 9){
