@@ -16,12 +16,13 @@ $(function (){
 
         let result = 0;
         item_name.forEach(function(item){
+            const input_chk=document.getElementById('check_'+item)
             var input_ele = $('#'+item);
-            var input_chk = $('#check_'+item);
             if(input_ele.val() == input_ele.attr('answer')){
                 result++;
-            }else {
-                input_chk.textContent="違います！！"
+                input_chk.textContent="";
+            }else if (input_ele.val() != input_ele.attr('answer')){
+                input_chk.textContent="回答が違います！";
             }
         });
         if(result < 9){

@@ -1,61 +1,101 @@
+/*メイン画面*/
+.main .mode {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/*編集画面*/
+.profile_edit .item {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.profile .name{
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.profile_create .item{
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+/*プロフィール画面*/
 .paginate {
     background: white;
-    font-size:1.2rem;
+    font-size: 1.2rem;
     font-weight: bold;
     padding-left: 40px;
-    
-}
-.profile h2{
-    font-size:1.5rem;
-}
-p   {
-    margin:10px;
-}
-.froms h1{
-    font-size:1.6rem;
-    color: #2196F3;
-} 
-.relations h1{
-    font-size:1.5rem;
-    color:red
+
 }
 
-#create a{
-    font-size:1.2rem;
+
+p {
+    margin: 10px;
 }
 
-.profile img{
+#create a {
+    font-size: 1.2rem;
+}
+
+.profile img {
     width: 150px;
     height: 200px;
     object-fit: cover;
 }
+
+.profile .edit {
+    background-color:rgba(0, 0, 255, 0.511);
+    border: #000000 solid 1px;
+    color: white;
+    padding: 0px 5px;
+    text-align: center;
+    display: inline-block;
+    font-size: 20px;
+    margin: 5px 0px;
+    cursor: pointer;
+}
+.profile .delete {
+    background-color:rgba(236, 119, 205, 0.511);
+    border: #000000 solid 1px;
+    color: rgb(0, 0, 0);
+    padding: 0px 5px;
+    text-align: center;
+    display: inline-block;
+    font-size: 20px;
+    margin: 5px 0px;
+    cursor: pointer;
+}
+
 .show {
     display: flex;
     background: white;
 }
 
-.show .image{
+.show .image {
     width: 300px;
     height: 400px;
     position: relative;
 }
 
-.show .profile_show_img{
+.show .profile_show_img {
     object-fit: cover;
-  }
+}
+
 .show .name {
     margin: 0;
     padding: 0;
     font-weight: bold;
     font-size: 18px;
-  }
+}
+
 .show .text {
     margin: 10px 0 0;
     padding: 0;
-  }
-  
-  /* 画像を天地中央表示 */
-  
+}
+
+/* 画像を天地中央表示 */
+
 .show .image img {
     height: 100%;
     position: absolute;
@@ -64,17 +104,29 @@ p   {
     right: 0;
     bottom: 0;
     margin: auto;
-  }
-  
+}
+
 /*こっから先はクイズ*/
-.quizselect{
+.quizselect {
     display: flex;
 }
 
-.quizselect img{
-width: 150px;
-height: 200px;
-object-fit: cover;
+.quizselect img {
+    width: 150px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.quizselect .quizstart{
+    background-color:rgba(205, 244, 30, 0.511);
+    border: #000000 solid 1px;
+    color: black;
+    padding: 0px 5px;
+    text-align: center;
+    display: inline-block;
+    font-size: 18px;
+    margin: 5px 0px;
+    cursor: pointer;
 }
 
 .quizquestion {
@@ -85,24 +137,27 @@ object-fit: cover;
 .quizquestion .right {
     margin: 0 0 0 20px;
     padding: 0;
-  }
+}
 
-.quizquestion .image{
+.quizquestion .image {
     width: 450px;
     height: 600px;
     position: relative;
 }
 
-.quizquestion .profile_show_img{
+.quizquestion .profile_show_img {
     object-fit: cover;
-  }
+}
 
 .quizquestion .text {
     margin: 10px 0 0;
     padding: 0;
-  }
-  
-  
+}
+
+.quizquestion .check{
+    color:red
+}
+
 .quizquestion .image img {
     height: 100%;
     position: absolute;
@@ -113,7 +168,7 @@ object-fit: cover;
     margin: auto;
 }
 
-#answerbutton{
+#answerbutton {
     background-color: #4CAF50;
     border: #000000;
     color: rgb(255, 255, 255);
@@ -125,7 +180,7 @@ object-fit: cover;
     cursor: pointer;
 }
 
-#answer_button{
+#answer_button {
     background-color: #4CAF50;
     border: #000000;
     color: rgb(255, 255, 255);
@@ -139,7 +194,8 @@ object-fit: cover;
 
 .quizquestion .footer {
     background-color: rgb(255, 255, 255);
-    border: #000000 solid 1px;;
+    border: #000000 solid 1px;
+    ;
     color: #000000;
     padding: 10px 20px;
     text-align: center;
@@ -149,9 +205,10 @@ object-fit: cover;
     cursor: pointer;
 }
 
-.newquizselect button{
+.newquizselect button {
     background-color: yellow;
-    border: #000000 solid 1px;;
+    border: #000000 solid 1px;
+    ;
     color: #000000;
     padding: 10px 20px;
     text-align: center;
@@ -159,4 +216,16 @@ object-fit: cover;
     font-size: 20px;
     margin: 10px 10px;
     cursor: pointer;
+}
+
+.newquizquestion .q{
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.newquizquestion .check{
+    color:red
+}
+.newquizquestion .radio{
+    font-size: 1.2rem;
 }

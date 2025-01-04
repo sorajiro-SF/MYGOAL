@@ -16,13 +16,11 @@
                 <p class="all_name">この人の名前は？</p>
                 <div class="name">
                 <input type="text" name="name" id="name" placeholder="漢字の名前" value="{{ old('name') }}" answer="{{$pro->name}}"/>
-                <p class="title__error" style="color:red">{{ $errors->first('name') }}</p>
                 <p class="check" id="check_name"></p>
                 </div>
 
                 <div class="kana">
                 <input type="text" name="kana" id="kana" placeholder="名前のかな" value="{{ old('kana') }}" answer="{{$pro->name_kana}}"/>
-                <p class="title__error" style="color:red">{{ $errors->first('kana') }}</p>
                 <p class="check" id="check_kana"></p>
                 </div>
 
@@ -48,22 +46,18 @@
 
                 <p class="hobby">この人の趣味は何？</p>
                 <input type="text" name="hobby" id="hobby" placeholder="自分の趣味" value="{{ old('hobby') }}" answer="{{$pro->hobby}}"/>
-                <p class="title__error" style="color:red">{{ $errors->first('hobby') }}</p>
                 <p class="check" id="check_hobby"></p>
             
                 <p class="food">この人の好きな食べ物は何？</p>
                 <input type="text" name="food" id="food" placeholder="好きな食べ物" value="{{ old('food') }}" answer="{{$pro->food}}"/>
-                <p class="title__error" style="color:red">{{ $errors->first('food') }}</p>
                 <p class="check" id="check_food"></p>
             
                 <p class="work">この人の仕事は何？</p>
                 <input type="text" name="work" id="work" placeholder="仕事" value="{{ old('work') }}" answer="{{$pro->work}}"/>
-                <p class="title__error" style="color:red">{{ $errors->first('work') }}</p>
                 <p class="check" id="check_work"></p>
                 
                 <p class="word">この人の好きな言葉は何？</p>
                 <input type="text" name="word" id="word" placeholder="好きな言葉" value="{{ old('word') }}" answer="{{$pro->word}}"/>
-                <p class="title__error" style="color:red">{{ $errors->first('word') }}</p>
                 <p class="check" id="check_word"></p>
                 <p></p>
             
