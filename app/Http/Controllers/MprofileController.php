@@ -83,8 +83,9 @@ class MprofileController extends Controller
             if (empty($file)) {
             } else {
                 $file_name = 'profile' . $pro->id; //ファイル名を変えるよ
-                $pro->image_path = $file_name; //データベースの画像パスを変えるよ
                 $request->file('img')->storeAs('public/image', $file_name);
+                $pro->image_path = $file_name; //データベースの画像パスを変えるよ
+                $pro->save();
             }
             $pro->save();
             DB::commit();
