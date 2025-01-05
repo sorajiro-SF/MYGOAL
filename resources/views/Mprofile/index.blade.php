@@ -28,19 +28,13 @@
             </div>
         </div>
         @endforeach
-        <br></br>
-
-        <p></p>
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-white border-b border-gray-200">
-                    <a href='/Mprofile/create'>新規作成する</a>
-                </div>
-            </div>
-        </div>
-        <div class='paginate'>
-            <p>{{ $profile->links() }}</p>
-        </div>
+    </div>
+    <p></p>
+    
+                <a class="profile_create" href='/Mprofile/create'>新規作成する</a>
+    <div class='paginate'>
+        <p>ページ</p>
+        <p>{{ $profile->links() }}</p>
     </div>
     </div>
     </div>

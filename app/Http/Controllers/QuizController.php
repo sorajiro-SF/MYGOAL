@@ -12,7 +12,7 @@ class QuizController extends Controller
 {
     public function QuizSelect(Mprofile $pro)
     {
-        return view('Quiz.select')->with(['profile' => $pro->getPaginateByLimit(5)]);
+        return view('Quiz.select')->with(['profile' => $pro->getPaginateByLimit(10)]);
     }
 
     public function QuizQuestion(Mprofile $pro, Relation $relation, From $from)
