@@ -11,41 +11,14 @@ class RelationSeeder extends Seeder
 {
     public function run(): void
     {
-        DB::table('relations')->insert([
-                'relation' => '恋人',
-                'created_at' => new DateTime(),
-                'updated_at' => new DateTime(),
-        ]);
-
-        DB::table('relations')->insert([
-            'relation' => '家族',
-            'created_at' => new DateTime(),
-            'updated_at' => new DateTime(),
-        ]);
-        
-        DB::table('relations')->insert([
-            'relation' => '知り合い',
-            'created_at' => new DateTime(),
-            'updated_at' => new DateTime(),
-        ]);
-
-        DB::table('relations')->insert([
-            'relation' => '知人',
-            'created_at' => new DateTime(),
-            'updated_at' => new DateTime(),
-        ]);
-        
-        DB::table('relations')->insert([
-            'relation' => '先生',
-            'created_at' => new DateTime(),
-            'updated_at' => new DateTime(),
-        ]);        
-        DB::table('relations')->insert([
-            'relation' => '上司',
-            'created_at' => new DateTime(),
-            'updated_at' => new DateTime(),
-        ]);
-
+        $arr=['友人','恋人','家族','親','知り合い','知人','先生','生徒','上司','部下','同僚'];
+        $at = new DateTime();
+        foreach ($arr as $pref) {
+            DB::table('relations')->insert([
+                'relation' => $pref,
+                'created_at' => $at,
+                'updated_at' => $at,
+            ]);
         }
-
+    }
 }

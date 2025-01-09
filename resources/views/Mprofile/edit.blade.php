@@ -88,7 +88,7 @@
                                 <p></p>
                                 <!---画像が新しく入力されたか否かで、If文を作成-->
 
-                                <input type="submit" value="保存する" />
+                                <input class="profile_submit" type="submit" value="保存する" />
                                 <div class="footer">
                                     <a href="/Mprofile">戻る</a>
                                 </div>
