@@ -24,10 +24,6 @@
                     <x-nav-link :href="route('NewQuiz.select')" :active="request()->routeIs('NewQuiz.select')">
                         {{ __('4択クイズ') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('froms')" :active="request()->routeIs('froms')">
-                        {{ __('出身地マスタ') }}
-                    </x-nav-link>
-
             
                 </div>
             </div>
