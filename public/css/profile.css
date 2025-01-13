@@ -63,10 +63,13 @@ p {
     font-size: 1.2rem;
 }
 
-.profile img {
+
+.profile .p_img {
     width: 150px;
     height: 200px;
     object-fit: cover;
+    margin:0 auto;
+
 }
 
 .profile .edit {
@@ -127,12 +130,18 @@ p {
     margin: 0;
     padding: 0;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 25px;
+    margin: 10px;
 }
 
 .show .text {
     margin: 10px 0 0;
     padding: 0;
+}
+
+.show .desc{
+    font-size: 20px;
+    overflow-wrap:break-word
 }
 
 /* 画像を天地中央表示 */
